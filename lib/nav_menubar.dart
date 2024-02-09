@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
+class ColorfulNavigationBar extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _ColorfulNavigationBarState createState() => _ColorfulNavigationBarState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
   int _selectedIndex = 0;
 
-  List<Widget> _widgetOptions = <Widget>[
-    Text('Home'),
-    Text('Search'),
-    Text('Profile'),
+  List<Color> _colors = [
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
   ];
 
   void _onItemTapped(int index) {
@@ -25,15 +26,26 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Genus...'),
+        backgroundColor: Colors.blue,
       ),
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: Container(
+          // color: _colors[_selectedIndex],
+          child: Text(
+              //'Selected Color: ${_colors[_selectedIndex].toString()}',
+              // style: TextStyle(fontSize: 24, color: Colors.white),
+              'Selected option is: '),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.pets_rounded),
+            label: 'Business',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
@@ -43,9 +55,14 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.person),
             label: 'Profile',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.black,
         onTap: _onItemTapped,
       ),
     );
