@@ -1,4 +1,4 @@
-import '../../features/shop/models/cart_model.dart';
+/*import '../../features/shop/models/cart_model.dart';
 
 class TPricingCalculator {
 
@@ -42,3 +42,4 @@ class TPricingCalculator {
     return cart.items.map((e) => e.price).fold(0, (previousPrice, currentPrice) => previousPrice + (currentPrice ?? 0));
   }
 }
+*/
