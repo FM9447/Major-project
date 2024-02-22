@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:Genus/sell_page.dart';
 
 class ColorfulNavigationBar extends StatefulWidget {
   @override
@@ -7,17 +8,24 @@ class ColorfulNavigationBar extends StatefulWidget {
 
 class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
   int _selectedIndex = 0;
-
+/*
   List<Color> _colors = [
     Colors.red,
     Colors.blue,
     Colors.green,
     Colors.yellow,
   ];
+*/
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      if (_selectedIndex == 2) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SellPage()),
+        );
+      }
     });
   }
 
@@ -31,7 +39,7 @@ class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
       body: Center(
         child: Container(
           // color: _colors[_selectedIndex],
-          child: Text(
+          child: const Text(
               //'Selected Color: ${_colors[_selectedIndex].toString()}',
               // style: TextStyle(fontSize: 24, color: Colors.white),
               'Selected option is: '),
@@ -44,20 +52,20 @@ class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.pets_rounded),
-            label: 'Business',
+            icon: Icon(Icons.chat),
+            label: 'Chats',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
+            icon: Icon(Icons.add),
+            label: 'Sell',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.heart_broken),
+            label: 'My Ads',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
+            label: 'Account',
           ),
         ],
         currentIndex: _selectedIndex,

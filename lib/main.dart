@@ -44,13 +44,15 @@ class App extends StatelessWidget {
 }
 */
 import 'package:flutter/material.dart';
-import 'package:Genus/bottom_navigationbar.dart';
+//import 'package:Genus/bottom_navigationbar.dart';
 import 'package:Genus/nav_menubar.dart';
+//import 'package:Genus/menu.dart';
 
 void main() {
   runApp(MyApp());
   runApp(MaterialApp(
     home: ColorfulNavigationBar(),
+    debugShowCheckedModeBanner: false,
   ));
 }
 
@@ -58,12 +60,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Genus',
+      title: 'Genus...',
       color: Colors.red,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      //home: MyHomePage(),
     );
   }
 }
