@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:Genus/location.dart';
 
 class SellPage extends StatefulWidget {
   @override
@@ -6,19 +7,19 @@ class SellPage extends StatefulWidget {
 }
 
 class _SellPageState extends State<SellPage> {
-  List<String> petNames = [
-    'Hens',
-    'Rabbits',
-    'Love birds',
-    'Dogs',
-    'Cats',
-    'Fishes',
-    'Doves',
-    'Ducks',
-    'Parrots',
-    'Rats',
-    'Snakes',
-    'Turtle',
+  List<Map<String, dynamic>> petNames = [
+    {'name': 'Hens', 'emoji': '🐔'},
+    {'name': 'Rabbits', 'emoji': '🐰'},
+    {'name': 'Love birds', 'emoji': '❤️🐦'},
+    {'name': 'Dogs', 'emoji': '🐶'},
+    {'name': 'Cats', 'emoji': '🐱'},
+    {'name': 'Fishes', 'emoji': '🐟'},
+    {'name': 'Doves', 'emoji': '🕊️'},
+    {'name': 'Ducks', 'emoji': '🦆'},
+    {'name': 'Parrots', 'emoji': '🦜'},
+    {'name': 'Rats', 'emoji': '🐀'},
+    {'name': 'Snakes', 'emoji': '🐍'},
+    {'name': 'Turtle', 'emoji': '🐢'},
   ];
 
   List<String> plantNames = [
@@ -49,59 +50,73 @@ class _SellPageState extends State<SellPage> {
       appBar: AppBar(
         title: Text('What are you offering?'),
       ),
-      body: Column(
+      body: Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Pets:',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              controller: petSearchController,
-              onChanged: (value) {
-                filterPetNames(value);
-              },
-              decoration: InputDecoration(
-                labelText: 'Search Pets',
-                prefixIcon: Icon(Icons.search),
-              ),
-            ),
-          ),
           Expanded(
-            child: PetNamesList(
-              petNames:
-                  filteredPetNames.isNotEmpty ? filteredPetNames : petNames,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    'Pets:',
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextField(
+                    controller: petSearchController,
+                    onChanged: (value) {
+                      filterPetNames(value);
+                    },
+                    decoration: InputDecoration(
+                      labelText: 'Search Pets',
+                      prefixIcon: Icon(Icons.search),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: PetNamesList(
+                    petNames: filteredPetNames.isNotEmpty
+                        ? filteredPetNames
+                        : petNames,
+                  ),
+                ),
+              ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Plants:',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              controller: plantSearchController,
-              onChanged: (value) {
-                filterPlantNames(value);
-              },
-              decoration: InputDecoration(
-                labelText: 'Search Plants',
-                prefixIcon: Icon(Icons.search),
-              ),
-            ),
-          ),
+          VerticalDivider(), // Add a vertical divider
           Expanded(
-            child: PlantNamesList(
-              plantNames: filteredPlantNames.isNotEmpty
-                  ? filteredPlantNames
-                  : plantNames,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    'Plants:',
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextField(
+                    controller: plantSearchController,
+                    onChanged: (value) {
+                      filterPlantNames(value);
+                    },
+                    decoration: InputDecoration(
+                      labelText: 'Search Plants',
+                      prefixIcon: Icon(Icons.search),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: PlantNamesList(
+                    plantNames: filteredPlantNames.isNotEmpty
+                        ? filteredPlantNames
+                        : plantNames,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -112,7 +127,9 @@ class _SellPageState extends State<SellPage> {
   void filterPetNames(String query) {
     setState(() {
       filteredPetNames = petNames
-          .where((pet) => pet.toLowerCase().contains(query.toLowerCase()))
+          .where(
+              (pet) => pet['name'].toLowerCase().contains(query.toLowerCase()))
+          .map<String>((pet) => pet['name'])
           .toList();
     });
   }
@@ -127,7 +144,7 @@ class _SellPageState extends State<SellPage> {
 }
 
 class PetNamesList extends StatelessWidget {
-  final List<String> petNames;
+  final List<dynamic> petNames;
 
   PetNamesList({required this.petNames});
 
@@ -140,7 +157,13 @@ class PetNamesList extends StatelessWidget {
           margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
           child: ElevatedButton(
             onPressed: () {
-              // Add onTap logic if needed
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      LocationPage(itemName: petNames[index]['name']),
+                ),
+              );
             },
             style: ButtonStyle(
               padding: MaterialStateProperty.all(
@@ -150,9 +173,22 @@ class PetNamesList extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  petNames[index],
-                  style: TextStyle(fontSize: 18),
+                Container(
+                  padding: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Text(
+                    petNames[index]['emoji'],
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                RichText(
+                  text: TextSpan(
+                    text: ' ${petNames[index]['name']}',
+                    style: TextStyle(fontSize: 18),
+                  ),
                 ),
                 Icon(Icons.arrow_forward),
               ],
@@ -178,7 +214,13 @@ class PlantNamesList extends StatelessWidget {
           margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
           child: ElevatedButton(
             onPressed: () {
-              // Add onTap logic if needed
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      LocationPage(itemName: plantNames[index]),
+                ),
+              );
             },
             style: ButtonStyle(
               padding: MaterialStateProperty.all(
