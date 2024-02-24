@@ -10,7 +10,7 @@ class _SellPageState extends State<SellPage> {
   List<Map<String, dynamic>> petNames = [
     {'name': 'Hens', 'emoji': '🐔'},
     {'name': 'Rabbits', 'emoji': '🐰'},
-    {'name': 'Love birds', 'emoji': '❤️🐦'},
+    {'name': 'Love birds', 'emoji': '🐦'},
     {'name': 'Dogs', 'emoji': '🐶'},
     {'name': 'Cats', 'emoji': '🐱'},
     {'name': 'Fishes', 'emoji': '🐟'},

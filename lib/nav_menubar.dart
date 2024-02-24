@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:Genus/sell_page.dart';
+import 'package:Genus/Account/account_page.dart';
+import 'package:Genus/Account/profile_page.dart';
+import 'package:Genus/Account/advertisement_page.dart';
+import 'package:Genus/Account/settings_page.dart';
 
 class ColorfulNavigationBar extends StatefulWidget {
   @override
@@ -8,14 +12,6 @@ class ColorfulNavigationBar extends StatefulWidget {
 
 class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
   int _selectedIndex = 0;
-/*
-  List<Color> _colors = [
-    Colors.red,
-    Colors.blue,
-    Colors.green,
-    Colors.yellow,
-  ];
-*/
 
   void _onItemTapped(int index) {
     setState(() {
@@ -60,7 +56,7 @@ class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
             label: 'Sell',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.heart_broken),
+            icon: Icon(Icons.favorite),
             label: 'My Ads',
           ),
           BottomNavigationBarItem(
@@ -73,6 +69,7 @@ class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
         unselectedItemColor: Colors.black,
         onTap: _onItemTapped,
       ),
+      drawer: _selectedIndex == 4 ? AccountDrawer() : null,
     );
   }
 }
