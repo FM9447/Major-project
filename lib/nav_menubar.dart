@@ -1,7 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:Genus/nav_menubar.dart';
 import 'package:Genus/sell_page.dart';
 import 'package:Genus/Account/account_page.dart';
 import 'package:Genus/chat_page.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Genus...',
+      color: Colors.red,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: ColorfulNavigationBar(),
+    );
+  }
+}
 
 class ColorfulNavigationBar extends StatefulWidget {
   @override
@@ -20,11 +40,9 @@ class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
           MaterialPageRoute(builder: (context) => SellPage()),
         );
       } else if (_selectedIndex == 1) {
-        // Check if "Chats" is selected
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) => ChatPage()), // Navigate to ChatPage
+          MaterialPageRoute(builder: (context) => ChatPage()),
         );
       }
     });
@@ -83,25 +101,6 @@ class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
         onTap: _onItemTapped,
       ),
       drawer: _selectedIndex == 4 ? AccountDrawer() : null,
-    );
-  }
-}
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Genus...',
-      color: Colors.red,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ColorfulNavigationBar(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
