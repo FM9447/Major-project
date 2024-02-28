@@ -27,3 +27,7 @@ flutter:
     - assets/apple.png
     - assets/login.jpg
     - assets/register.jpg
+    - - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+            - asset: assets/fonts/Poppins-Bold.ttf
+              weight: 800
