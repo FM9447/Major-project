@@ -2,26 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:Genus/Account/profile_page.dart';
 import 'package:Genus/Account/advertisement_page.dart';
 import 'package:Genus/Account/settings_page.dart';
+import 'package:Genus/Account/order_page.dart';
 
 class AccountDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
-            child: Text(
-              'Account',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-              ),
-            ),
-          ),
+        children: [
           ListTile(
             title: Text('Profile'),
             onTap: () {
@@ -32,11 +20,20 @@ class AccountDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Advertisement'),
+            title: Text('Advertisements'),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => AdvertisementsPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('My Order'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => OrderPage()),
               );
             },
           ),

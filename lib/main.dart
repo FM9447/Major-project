@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:Genus/nav_menubar.dart';
-import 'package:Genus/Account/account_page.dart';
 
 void main() {
   runApp(MyApp());

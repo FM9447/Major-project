@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:Genus/location.dart';
 
 class SellPage extends StatefulWidget {
   @override
@@ -157,13 +156,7 @@ class PetNamesList extends StatelessWidget {
           margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
           child: ElevatedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      LocationPage(itemName: petNames[index]['name']),
-                ),
-              );
+              //onPressed
             },
             style: ButtonStyle(
               padding: MaterialStateProperty.all(
@@ -214,13 +207,7 @@ class PlantNamesList extends StatelessWidget {
           margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
           child: ElevatedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      LocationPage(itemName: plantNames[index]),
-                ),
-              );
+              //onPressed
             },
             style: ButtonStyle(
               padding: MaterialStateProperty.all(

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:Genus/sell_page.dart';
 import 'package:Genus/Account/account_page.dart';
-import 'package:Genus/Account/profile_page.dart';
-import 'package:Genus/Account/advertisement_page.dart';
-import 'package:Genus/Account/settings_page.dart';
+import 'package:Genus/chat_page.dart';
 
 class ColorfulNavigationBar extends StatefulWidget {
   @override
@@ -21,6 +19,13 @@ class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
           context,
           MaterialPageRoute(builder: (context) => SellPage()),
         );
+      } else if (_selectedIndex == 1) {
+        // Check if "Chats" is selected
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ChatPage()), // Navigate to ChatPage
+        );
       }
     });
   }
@@ -29,16 +34,23 @@ class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Genus...'),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('Genus...'),
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                // Add your logic for the search functionality here
+              },
+            ),
+          ],
+        ),
         backgroundColor: Colors.blue,
       ),
       body: Center(
         child: Container(
-          // color: _colors[_selectedIndex],
-          child: const Text(
-              //'Selected Color: ${_colors[_selectedIndex].toString()}',
-              // style: TextStyle(fontSize: 24, color: Colors.white),
-              'Selected option is: '),
+          child: const Text('Selected option is: '),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -56,8 +68,8 @@ class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
             label: 'Sell',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'My Ads',
+            icon: Icon(Icons.window),
+            label: 'Window',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -65,11 +77,31 @@ class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
           ),
         ],
         currentIndex: _selectedIndex,
+        backgroundColor: Colors.amber,
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.black,
         onTap: _onItemTapped,
       ),
       drawer: _selectedIndex == 4 ? AccountDrawer() : null,
+    );
+  }
+}
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Genus...',
+      color: Colors.red,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: ColorfulNavigationBar(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
