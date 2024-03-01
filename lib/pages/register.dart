@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:secondapp/dilshad/main.dart';
+import 'package:secondapp/dilshad/main.dart';
+import 'package:secondapp/dilshad/nav_menubar.dart';
+
 
 class MyRegister extends StatefulWidget {
   const MyRegister({Key? key}) : super(key: key);
@@ -49,7 +53,12 @@ class _MyRegisterState extends State<MyRegister> {
                     MyTextField(hintText: "Confirm Password", obscureText: true),
                     SizedBox(height: 30),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ColorfulNavigationBar()),
+                        );
+                      },
                       child: Text(
                         'Register',
                         style: TextStyle(
