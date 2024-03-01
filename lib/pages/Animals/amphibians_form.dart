@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import '../image_picker_widget.dart';
-
+//import 'package:secondapp/pages/success_dialog.dart';
 
 
 void main() {
@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Amphibians Ad Upload Form',
       debugShowCheckedModeBanner: false, // Remove debugging banner
       theme: ThemeData(
-        primaryColor: Colors.white,
+        primaryColor: Colors.blue,
+
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: AppBarTheme(
@@ -65,6 +66,97 @@ class _AmphibiansAdUploadFormState extends State<AmphibiansAdUploadForm> {
     );
   }
 
+  void _showCustomDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          child: Stack(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.only(
+                  top: 66,
+                  bottom: 16,
+                  left: 16,
+                  right: 16,
+                ),
+                margin: EdgeInsets.only(top: 66),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(20.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 10.0,
+                      offset: Offset(0.0, 10.0),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Text(
+                      'Success',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                    ),
+                    SizedBox(height: 16.0),
+                    Text(
+                      'Advertisement posted successfully',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(height: 24.0),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text(
+                          'OK',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                top: 0,
+                left: 16,
+                right: 16,
+                child: CircleAvatar(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  radius: 66,
+                  child: Icon(
+                    Icons.check,
+                    color: Colors.white,
+                    size: 50,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -303,7 +395,7 @@ class _AmphibiansAdUploadFormState extends State<AmphibiansAdUploadForm> {
                 icon: Icon(Icons.photo_camera), // Icon for photo upload
                 label: Text('Upload Photo'), // Button text for photo upload
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                 // primaryColor: Colors.red,
                   padding: EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
@@ -313,14 +405,7 @@ class _AmphibiansAdUploadFormState extends State<AmphibiansAdUploadForm> {
               SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    // Process the data
-                    // For example, you can send this data to an API
-                    // or save it locally
-                    // You can access the values using the controllers like: speciesController.text
-                    // After processing, you may navigate to a different screen
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => NextScreen()));
-                  }
+                  _showCustomDialog(context);
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.green, // Change button color to green

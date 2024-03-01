@@ -3,7 +3,7 @@ description: "A new Flutter project mainly focusing on user inputs"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+awesome_dialog: ^3.0.2
 environment:
   sdk: '>=2.17.0 <3.0.0'
 
@@ -27,3 +27,6 @@ flutter:
     - assets/apple.png
     - assets/login.jpg
     - assets/register.jpg
+    - assets/images/image1.png
+    - assets/images/image2.png
+    - assets/images/image3.png
