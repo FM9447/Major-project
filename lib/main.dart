@@ -1,22 +1,32 @@
+import 'package:thena/screens/drawer_screen.dart';
+import 'package:thena/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/theme/theme.dart';
-
-import 'app.dart';
+// import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  runApp(const App());
+  runApp(
+    MaterialApp(
+      home: HomePage(),
+      theme: ThemeData(fontFamily: 'Circular'),
+      debugShowCheckedModeBanner: false,
+    ),
+  );
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({Key, key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      themeMode: ThemeMode.system,
-      theme: ThemeData(),
-      darkTheme: ThemeData(),
+    return Container(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            DrawerScreen(),
+            HomeScreen(),
+          ],
+        ),
+      ),
     );
   }
 }
