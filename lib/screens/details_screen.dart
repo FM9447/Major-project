@@ -89,7 +89,7 @@ class DetailsScreen extends StatelessWidget {
                               ),
                               Expanded(child: Container()),
                               Text(
-                                'Dec 16, 2024',
+                                'Mar 16, 2024',
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 12),
                               ),
