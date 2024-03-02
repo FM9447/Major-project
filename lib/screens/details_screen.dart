@@ -68,7 +68,8 @@ class DetailsScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               CircleAvatar(
-                                backgroundImage: AssetImage('images/profile.jpg'),
+                                backgroundImage:
+                                    AssetImage('images/profile.jpg'),
                               ),
                               SizedBox(width: 10),
                               Column(
@@ -76,7 +77,9 @@ class DetailsScreen extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Anvesha Shandilya',
-                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16),
                                   ),
                                   Text(
                                     'Owner',
@@ -86,8 +89,9 @@ class DetailsScreen extends StatelessWidget {
                               ),
                               Expanded(child: Container()),
                               Text(
-                                'Dec 16, 2020',
-                                style: TextStyle(color: Colors.black54, fontSize: 12),
+                                'Dec 16, 2024',
+                                style: TextStyle(
+                                    color: Colors.black54, fontSize: 12),
                               ),
                             ],
                           ),
@@ -97,7 +101,8 @@ class DetailsScreen extends StatelessWidget {
                           margin: EdgeInsets.symmetric(horizontal: 20),
                           child: Text(
                             'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-                            style: TextStyle(color: Colors.black54, height: 1.7),
+                            style:
+                                TextStyle(color: Colors.black54, height: 1.7),
                           ),
                         ),
                       ],
@@ -157,7 +162,10 @@ class DetailsScreen extends StatelessWidget {
                     children: [
                       Text(
                         petName,
-                        style: TextStyle(color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold),
                       ),
                       // Icon(
                       //   gender == 'female' ? Icons.venus : Icons.mars,
@@ -171,7 +179,10 @@ class DetailsScreen extends StatelessWidget {
                     children: [
                       Text(
                         breed,
-                        style: TextStyle(fontSize: 12, color: Colors.black, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
                       ),
                       Text(
                         age + ' years',
@@ -203,7 +214,9 @@ class DetailsScreen extends StatelessWidget {
               height: 100,
               decoration: BoxDecoration(
                 color: Colors.grey[100],
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30)),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
