@@ -3,6 +3,8 @@ import 'package:secondapp/dilshad/main.dart';
 import 'package:secondapp/dilshad/main.dart';
 import 'package:secondapp/dilshad/nav_menubar.dart';
 
+import '../nixon/screens/home_screen.dart';
+
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
 
@@ -152,6 +154,7 @@ class _MyLoginState extends State<MyLogin> {
                                 MaterialPageRoute(builder: (context) => ColorfulNavigationBar()),
                               );
                             },
+
                             icon: Icon(Icons.arrow_forward),
                           ),
 

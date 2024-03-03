@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 import 'package:secondapp/pages/sell_list.dart';
 import 'package:secondapp/dilshad/Account/account_page.dart';
 import 'package:secondapp/dilshad/chat_page.dart';
@@ -55,7 +55,7 @@ class _ColorfulNavigationBarState extends State<ColorfulNavigationBar> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Genus...',
+              'Genus',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             IconButton(
@@ -157,7 +157,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Genus...',
+      title: 'Genus',
       color: Colors.red,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -166,4 +166,4 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
     );
   }
-}
+} */
