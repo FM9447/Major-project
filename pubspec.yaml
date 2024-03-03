@@ -53,6 +53,8 @@ flutter:
     - assets/images/doog.png
     - assets/images/doberman.png
     - assets/images/dobe.png
+    - assets/images/beagle.webp
+    - assets/images/beagle1.png
   fonts:
     - family: Circular
       fonts:

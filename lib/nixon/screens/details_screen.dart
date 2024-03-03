@@ -26,7 +26,7 @@ class DetailsScreen extends StatelessWidget {
         'breed': 'Beagle',
         'age': '2',
         'gender': 'male',
-        'imagePath': 'assets/images/dog0.png',
+        'imagePath': 'assets/images/beagle.webp',
       },
 
       {

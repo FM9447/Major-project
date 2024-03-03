@@ -26,7 +26,7 @@ List<Map> dogs = [
   {
     "id": "1",
     "name": "Bruno",
-    "imagePath": "assets/images/dog0.png",
+    "imagePath": "assets/images/beagle1.png",
     "breed": "Beagle",
     "gender": "male",
     "age": "0",
