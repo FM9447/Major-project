@@ -30,3 +30,35 @@ flutter:
     - assets/images/image1.png
     - assets/images/image2.png
     - assets/images/image3.png
+    - assets/images/bird.png
+    - assets/images/bunny.png
+    - assets/images/cat.png
+    - assets/images/dog.png
+    - assets/images/dog0.png
+    - assets/images/dog1.png
+    - assets/images/dog2.png
+    - assets/images/dog3.png
+    - assets/images/dog4.png
+    - assets/images/dog5.png
+    - assets/images/dog6.png
+    - assets/images/dog7.png
+    - assets/images/dog8.png
+    - assets/images/dog9.png
+    - assets/images/horse.png
+    - assets/images/profile.jpg
+    - assets/images/s1.jpg
+    - assets/images/s2.jpg
+    - assets/images/s3.jpg
+    - assets/images/s4.jpg
+    - assets/images/doog.png
+    - assets/images/doberman.png
+    - assets/images/dobe.png
+  fonts:
+    - family: Circular
+      fonts:
+        - asset: assets/fonts/CircularAir-Medium.ttf
+        - asset: assets/fonts/CircularAir-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/CircularAir-Light.ttf
+
+

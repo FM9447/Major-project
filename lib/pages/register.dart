@@ -3,6 +3,9 @@ import 'package:secondapp/dilshad/main.dart';
 import 'package:secondapp/dilshad/main.dart';
 import 'package:secondapp/dilshad/nav_menubar.dart';
 
+import '../nixon/main.dart';
+import '../nixon/screens/home_screen.dart';
+
 
 class MyRegister extends StatefulWidget {
   const MyRegister({Key? key}) : super(key: key);
@@ -54,6 +57,10 @@ class _MyRegisterState extends State<MyRegister> {
                     SizedBox(height: 30),
                     ElevatedButton(
                       onPressed: () {
+                        /*Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ColorfulNavigationBar()), */
+
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => ColorfulNavigationBar()),
