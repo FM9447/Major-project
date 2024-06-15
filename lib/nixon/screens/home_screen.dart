@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:secondapp/nixon/configuration.dart';
-import 'package:secondapp/nixon/widgets/pet_categories.dart';
-import 'package:secondapp/nixon/widgets/pet_category_display.dart';
-import 'package:secondapp/nixon/widgets/search_bar.dart';
-import 'package:secondapp/dilshad/nav_menubar.dart';
-import 'package:secondapp/pages/sell_list.dart';
-import 'package:secondapp/dilshad/Account/account_page.dart';
-import 'package:secondapp/dilshad/chat_page.dart';
+import 'package:Genus/nixon/configuration.dart';
+import 'package:Genus/nixon/widgets/pet_categories.dart';
+import 'package:Genus/nixon/widgets/pet_category_display.dart';
+import 'package:Genus/nixon/widgets/search_bar.dart';
+import 'package:Genus/dilshad/nav_menubar.dart';
+import 'package:Genus/pages/sell_list.dart';
+import 'package:Genus/dilshad/Account/account_page.dart';
+import 'package:Genus/dilshad/chat_page.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

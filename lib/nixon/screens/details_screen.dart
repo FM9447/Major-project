@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:secondapp/nixon/configuration.dart';
+import 'package:Genus/nixon/configuration.dart';
 
 class DetailsScreen extends StatelessWidget {
   final String id;

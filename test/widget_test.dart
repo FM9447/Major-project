@@ -8,8 +8,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'dart:ui';
-import 'package:secondapp/main.dart';
-import 'package:secondapp/pages/Animals/amphibians_form.dart';
+import 'package:Genus/main.dart';
+import 'package:Genus/pages/Animals/amphibians_form.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:secondapp/dilshad/Account/profile_page.dart';
-import 'package:secondapp/dilshad/Account/advertisement_page.dart';
-import 'package:secondapp/dilshad/Account/settings_page.dart';
-import 'package:secondapp/dilshad/Account/order_page.dart';
+import 'package:Genus/dilshad/Account/profile_page.dart';
+import 'package:Genus/dilshad/Account/advertisement_page.dart';
+import 'package:Genus/dilshad/Account/settings_page.dart';
+import 'package:Genus/dilshad/Account/order_page.dart';
 
 class AccountDrawer extends StatelessWidget {
   @override

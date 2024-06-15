@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:secondapp/dilshad/chat_page.dart';
+import 'package:Genus/dilshad/chat_page.dart';
 
 class UserListWidget extends StatelessWidget {
   final List<User> users;

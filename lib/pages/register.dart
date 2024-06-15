@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:secondapp/dilshad/main.dart';
-import 'package:secondapp/dilshad/main.dart';
-import 'package:secondapp/dilshad/nav_menubar.dart';
+import 'package:Genus/dilshad/main.dart';
+import 'package:Genus/dilshad/main.dart';
+import 'package:Genus/dilshad/nav_menubar.dart';
 
 import '../nixon/main.dart';
 import '../nixon/screens/home_screen.dart';

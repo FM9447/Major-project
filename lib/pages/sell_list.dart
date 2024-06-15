@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:secondapp/pages/Animals/rabbit_form.dart';
+import 'package:Genus/pages/Animals/rabbit_form.dart';
 import 'dart:ui';
 import 'Animals/dog_form.dart';
 import 'Animals/cat_form.dart';

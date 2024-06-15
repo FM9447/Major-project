@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:secondapp/sreerag/size_config.dart';
-import 'package:secondapp/sreerag/onboarding_contents.dart';
-import 'package:secondapp/pages/login.dart';
-import 'package:secondapp/pages/register.dart';
+import 'package:Genus/sreerag/size_config.dart';
+import 'package:Genus/sreerag/onboarding_contents.dart';
+import 'package:Genus/pages/login.dart';
+import 'package:Genus/pages/register.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);

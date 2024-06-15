@@ -1,4 +1,4 @@
-import 'package:secondapp/nixon/configuration.dart';
+import 'package:Genus/nixon/configuration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

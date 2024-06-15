@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:secondapp/nixon/screens/details_screen.dart';
+import 'package:Genus/nixon/screens/details_screen.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Color primaryGreen = Color(0xff416d6d);

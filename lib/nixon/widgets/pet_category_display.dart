@@ -1,4 +1,4 @@
-import 'package:secondapp/nixon/widgets/pet_card.dart';
+import 'package:Genus/nixon/widgets/pet_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
