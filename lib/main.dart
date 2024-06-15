@@ -4,6 +4,7 @@ import 'package:Genus/pages/register.dart';
 import 'package:Genus/sreerag/onboarding_screen.dart';
 import 'package:Genus/sreerag/onboarding_contents.dart';
 
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
