@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "BxProject",
+    "slug": "BxProject",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/94f26862-3392-4dc2-888b-1933a360e92a"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "94f26862-3392-4dc2-888b-1933a360e92a"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "android": {}
+  }
+}
